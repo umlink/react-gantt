@@ -7,7 +7,11 @@ import Context from '../../context'
 import './index.less'
 
 const TimeAxis: React.FC = () => {
-  const { store, prefixCls } = useContext(Context)
+  const {
+    store,
+    prefixCls,
+    todayStyle
+  } = useContext(Context)
   const prefixClsTimeAxis = `${prefixCls}-time-axis`
   const { sightConfig, isToday } = store
   const majorList = store.getMajorList()
@@ -66,9 +70,8 @@ const TimeAxis: React.FC = () => {
               style={{ width: item.width, left: item.left }}
             >
               <div
-                className={classNames(`${prefixClsTimeAxis}-minor-label`, {
-                  [`${prefixClsTimeAxis}-today`]: getIsToday(item),
-                })}
+                style={getIsToday(item) ? todayStyle : {}}
+                className={classNames(`${prefixClsTimeAxis}-minor-label`)}
               >
                 {item.label}
               </div>

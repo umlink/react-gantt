@@ -49,6 +49,7 @@ export namespace Gantt {
     translateX: number
     translateY: number
     stepGesture: string
+    disabled: boolean
     invalidDateRange: boolean
     dateTextFormat: (startX: number) => string
     getDateWidth: (startX: number, endX: number) => string
@@ -68,6 +69,7 @@ export namespace Gantt {
     startDate: string | null
     endDate: string | null
     content: string
+    disabled: boolean
     collapsed: boolean
     group?: boolean
     children?: Item<RecordType>[]

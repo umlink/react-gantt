@@ -58,6 +58,7 @@ export function transverseData(data: Gantt.Record[] = [], startDateKey: string, 
       group: record.group,
       startDate: record[startDateKey] || '',
       endDate: record[endDateKey] || '',
+      disabled: record.disabled || false,
       collapsed: record.collapsed || false,
       children: transverseData(record.children || [], startDateKey, endDateKey),
     }

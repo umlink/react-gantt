@@ -1,10 +1,10 @@
 {
-  "name": "rc-gantt",
-  "version": "0.3.1",
+  "name": "@umlink/rc-gantt",
+  "version": "0.0.1",
   "homepage": "https://ahwgs.github.io/react-gantt/#/",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ahwgs/react-gantt.git"
+    "url": "git+https://github.com/umlink/react-gantt.git"
   },
   "license": "MIT",
   "author": "ahwgs <ah_wgs@126.com>",

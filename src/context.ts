@@ -1,6 +1,7 @@
-import React, { createContext } from 'react'
-import GanttStore from './store'
-import { DefaultRecordType, Gantt } from './types'
+import type React from 'react'
+import { createContext } from 'react'
+import type GanttStore from './store'
+import type { DefaultRecordType, Gantt } from './types'
 
 export interface GanttContext<RecordType = DefaultRecordType> {
   prefixCls: string
@@ -39,7 +40,7 @@ export interface GanttContext<RecordType = DefaultRecordType> {
   renderLeftText?: (barInfo: Gantt.Bar<RecordType>) => React.ReactNode
   renderRightText?: (barInfo: Gantt.Bar<RecordType>) => React.ReactNode
   onExpand?: (record: Gantt.Record<RecordType>, collapsed: boolean) => void
-
+  todayStyle: React.CSSProperties | undefined
   hideTable?: boolean
 }
 const context = createContext<GanttContext>({} as GanttContext)

@@ -1,11 +1,11 @@
-import React, { useContext, useCallback, useMemo } from 'react';
-import { observer } from 'mobx-react-lite';
-import classNames from 'classnames';
-import Context from '../../context';
-import './index.less';
+import React, { useCallback, useContext, useMemo } from 'react'
+import { observer } from 'mobx-react-lite'
+import classNames from 'classnames'
+import Context from '../../context'
+import './index.less'
 
 const TimeIndicator: React.FC = () => {
-  const { store, prefixCls } = useContext(Context);
+  const { store, prefixCls } = useContext(Context)
   const {
     scrolling,
     translateX,
@@ -13,19 +13,19 @@ const TimeIndicator: React.FC = () => {
     viewWidth,
     todayTranslateX,
     locale,
-  } = store;
-  const prefixClsTimeIndicator = `${prefixCls}-time-indicator`;
-  const type = todayTranslateX < translateX ? 'left' : 'right';
-  const left = type === 'left' ? tableWidth : 'unset';
-  const right = type === 'right' ? 111 : 'unset';
+  } = store
+  const prefixClsTimeIndicator = `${prefixCls}-time-indicator`
+  const type = todayTranslateX < translateX ? 'left' : 'right'
+  const left = type === 'left' ? tableWidth : 'unset'
+  const right = type === 'right' ? 111 : 'unset'
   const display = useMemo(() => {
-    const isOverLeft = todayTranslateX < translateX;
-    const isOverRight = todayTranslateX > translateX + viewWidth;
-    return isOverLeft || isOverRight ? 'block' : 'none';
-  }, [todayTranslateX, translateX, viewWidth]);
+    const isOverLeft = todayTranslateX < translateX
+    const isOverRight = todayTranslateX > translateX + viewWidth
+    return isOverLeft || isOverRight ? 'block' : 'none'
+  }, [todayTranslateX, translateX, viewWidth])
   const handleClick = useCallback(() => {
-    store.scrollToToday();
-  }, [store]);
+    store.scrollToToday()
+  }, [store])
   return (
     <button
       onClick={handleClick}
@@ -38,6 +38,6 @@ const TimeIndicator: React.FC = () => {
     >
       <span>{locale.today}</span>
     </button>
-  );
-};
-export default observer(TimeIndicator);
+  )
+}
+export default observer(TimeIndicator)
